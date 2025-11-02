@@ -1,0 +1,36 @@
+# Ruff configuration file
+# See https://docs.astral.sh/ruff/configuration/
+
+# Include Jupyter notebooks in linting
+extend-include = ["*.ipynb"]
+
+# Line length
+line-length = 88
+
+# Target Python version
+target-version = "py311"
+
+# Enable specific rule sets
+[lint]
+# Select specific rule categories
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+
+# Ignore specific rules if needed
+ignore = []
+
+# Allow autofix for all enabled rules
+fixable = ["ALL"]
+unfixable = []
+
+[lint.per-file-ignores]
+# Ignore certain rules in notebooks if needed
+"*.ipynb" = []
+
